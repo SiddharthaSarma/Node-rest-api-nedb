@@ -1,6 +1,6 @@
-const faker = require('faker');
-const _ = require('lodash');
-const UsersDB  = require('../models/db');
+import faker from 'faker';
+import { times } from 'lodash';
+import UsersDB from '../models/db';
 
 const users = [];
 _.times(50, () => {
@@ -10,7 +10,7 @@ _.times(50, () => {
     phoneNumber: faker.phone.phoneNumber(),
     street: faker.address.streetName(),
     city: faker.address.city(),
-    state: faker.address.state(),
+    state: faker.address.state()
   });
 });
 

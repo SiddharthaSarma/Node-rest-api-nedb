@@ -1,15 +1,17 @@
-const express = require('express');
-const logger = require('morgan');
-const bodyParser = require('body-parser');
-const users = require('./routes/userRoutes');
+import express from 'express';
+import logger from 'morgan';
+import bodyParser from 'body-parser';
+import users from './routes/userRoutes';
 
 const app = express();
 
 // Middleware
 app.use(logger('dev'));
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
 
 app.use(bodyParser.json());
 
@@ -35,6 +37,6 @@ app.use((err, req, res, next) => {
 });
 
 // Server
-app.listen(3030, function () {
+app.listen(3030, () => {
   console.log('Listening on port 3030');
 });
